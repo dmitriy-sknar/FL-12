@@ -217,7 +217,7 @@
         background-size: 30px auto;
     }
     
-    .contact-form .form-control {
+    .contact-form .form-control:not([name="contact_message"]) {
         border: none;
         border-bottom: 1px solid lightskyblue;
         transition: 0.5s;
