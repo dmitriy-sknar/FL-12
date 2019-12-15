@@ -1,0 +1,269 @@
+%borderRadius {
+    border-radius: 7px;
+  }
+
+%flexPosition {
+    display: flex;
+    align-items: center;
+}
+
+@mixin landingLogo($color, $font) {
+    display: flex;
+    align-items: center;
+
+    img {
+        height: 45px;
+        width: 45px;
+    }
+
+    p {
+        @include fontWeights("medium");
+        font-size: 23px;
+        width: 80px;
+        text-align: center;
+        color: $color;
+        font-family: $font;
+
+        span {
+            display: block;
+            font-size: 8px;
+        }
+    }
+}
+
+$fontWeight: ("regular": 500, "medium": 600, "hardone": 700);
+@mixin fontWeights($weight) {
+    font-weight: map-get($fontWeight, $weight);
+}
+
+$highlitedTextWrapperBackground: red !default;
+@mixin textHighlighter($top: 0, $left: 0, $width: 100px, $height: 10px, 
+    $background: $highlitedTextWrapperBackground) {
+  
+  position: relative;
+
+    &:after {
+        content: "";
+        width: $width;
+        height: $height;
+        position: absolute;
+        top: $top;
+        left: $left;
+        background: $background;
+        opacity: 50%;
+        z-index: -1;
+    }
+}
+
+@mixin link ($size, $color) {
+    color: $color;
+    font-size: $size;
+    &:hover {
+        cursor: pointer;
+        color: #e2e2e2;
+    }
+}
+
+@mixin button-style {
+    .header_button, .section_banner_button { 
+        width: 120px;
+        height: 42px;
+        border-radius: 3px; 
+        background-color: $buttonsBackground;
+        border: none;
+        color: $secondFontColor;
+        font-family: $fontBasic;
+        font-size: 16px;
+        font-weight: 600;   
+        cursor: pointer;
+
+        &:hover {
+            background-color: darken($buttonsBackground, 10%);
+        }
+
+        &:active {
+            background-color: darken($buttonsBackground, 15%);
+        }
+    }
+}
+
+body {
+    background: $contentBackground;
+    width: 1600px;
+
+    header {
+        height: 600px;
+        margin: auto;
+        background: $contentBackground;
+        background-image: $headerBackgroundImg;
+        background-repeat: no-repeat;
+        border-radius: 0 0 50% 0;
+        background-position-y: center;
+
+        .header-wrap {
+            margin-left: 10%; 
+            margin-right: 50%; 
+            margin-bottom: 0px; 
+            padding-top: 10px;
+
+            .landing-logo {   
+                @include landingLogo($baseFontColor, $fontBasic);
+            }     
+        }
+
+        .header_heading { 
+            font-size: 28pt;
+            font-family: $fontSecond;
+            font-weight: bold;
+            line-height: 60px;
+            color: $baseFontColor;
+            z-index: 2;
+            
+            @include textHighlighter(0px, 252px, 160px, 50px);
+        }
+
+        .header_text {
+            font-family: $fontSecond;
+            font-size: 13pt;
+            line-height: 1.3rem;
+            margin-bottom: 50px;
+            color: $baseFontColor;
+        }
+
+        .login {
+            @include link($fontBasic, white);
+            margin-left: 120px;
+        }
+    }
+
+    main {
+        margin: 0 auto;
+        width: 960px;
+        @extend %flexPosition;
+        flex-direction: column;
+    
+        .section_text {
+            font-size: 28px;
+            color: $baseFontColor;
+            @include fontWeights('medium');
+            @include textHighlighter(0px, 140px, 125px, 40px);
+        }
+    
+        .section_card_wrap{
+            display: flex;
+            flex-direction: column;
+    
+            .section_card{
+                @extend %flexPosition;
+                justify-content: space-between;
+                box-sizing: border-box;
+                width: 860px;;
+                height: 260px;
+                background-color: $cardBgColor;
+                padding: 15px;
+                margin: 8px;
+    
+                @extend %borderRadius;
+
+                img {
+                    min-width: 360px;
+                    @extend %borderRadius;
+                }
+    
+                .section_card_right_container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-around;
+                    padding: 20px 0;
+                    margin: 0 auto;
+                    box-sizing: border-box;
+                    height: inherit;
+                    width: 350px;
+    
+                    .section_card_heading {
+                        color: white;
+                        font-size: 20px;
+        
+                        @include fontWeights("hardone");
+                    }
+
+                    .section_card_text {
+                        font-family: $fontSecond;
+                        font-size: 16px;
+                        line-height: 18px;
+                        color: $secondFontColor;
+                        margin: 0 0 8px 0;
+                        text-align: justify;
+                    }
+
+                    .section_link {
+                        @include link(16px, $baseFontColor);
+                    }
+                }
+            }
+        }
+
+        .section_banner {
+            @extend %flexPosition;
+    
+            justify-content: space-around;
+            width: 680px;
+            padding: 3%;
+            background: $gradientColor;
+    
+            @extend %borderRadius;
+    
+            margin-top: 100px;
+            margin-bottom: -60px;
+    
+            .section_banner_heading {
+                z-index: 2;
+                color: $baseFontColor;
+                font-size: 22px;
+                @include fontWeights("hardone");   
+                margin-bottom: 10px; 
+                margin: 0;    
+                @include textHighlighter(-12px, 85px, 48px, 50px);
+            }
+    
+            .section_banner_text {
+                color: $secondFontColor;
+                font-family: $fontSecond;
+                font-size: 16px;
+                @include fontWeights("regular");
+                margin: 10px 0 0 0;
+            }
+        }
+    }
+
+    .footer {
+        &-wrap {
+            @extend %flexPosition;
+            justify-content: space-around;
+            width: 100%;
+            height: 160px;
+            background-color: $cardBgColor;
+            font-family: $fontSecond;
+            color: $secondFontColor;
+            padding-top: 60px;
+    
+            .footer_logo {
+                @include landingLogo($secondFontColor, $fontSecond);
+            }
+    
+            .footer_text {
+                width: 240px;
+                font-size: 12px;
+                line-height: 1.5rem;
+            }
+    
+            .footer-cr {
+                font-size: 12px;
+            }
+        }
+    }
+
+    @include button-style;
+}
+
