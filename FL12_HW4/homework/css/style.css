@@ -1,0 +1,236 @@
+body {
+    min-width: 900px;
+    height: 100%;
+    margin: auto;
+    background-color: #fff;
+    color: #222;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 16px;
+    padding-top: 0px;
+    overflow-x: hidden
+}
+
+.lending{
+    height: 100%;
+}
+
+.nav-container {
+    height: 80px;
+    line-height: 80px;
+}
+
+.banner{
+    text-align: center;
+    float: left;
+    margin: auto;
+    width: 50%;
+}
+
+.banner h1{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.5em;
+    margin: 0;
+    line-height: 80px;
+}
+
+.main-nav{
+    text-align: center;
+    float: right;
+    width: 50%;
+}
+
+.main-nav ul{
+    margin: 0;
+}
+
+.nav-item{
+    text-decoration: none;
+    line-height: 80px;
+    display: inline-block;
+    color: #a09a9a;
+    transition: color 0.5s, background-color 0.5s;
+    height: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.nav-item:hover{
+    color: #fff;
+    text-decoration: none;
+    background-color: #a09a9a;
+    transition: color 0.5s, background-color 0.5s;
+}
+
+.nav-item > .nav-item-link {
+    color: #a09a9a;
+    border: 1px solid transparent;
+    text-decoration: none;
+    letter-spacing: 2px;
+    padding: 2% 2%;
+    text-align: center;
+    width: 100%;
+    transition: color 0.5s;
+}
+.nav-item:hover > .nav-item-link{
+    color: #fff;
+    transition: color 0.5s;
+}
+
+.landing-image{
+    /* display: grid; */
+    background: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url('../img/home-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.landing-content{
+    position: absolute;
+    top: 400px;
+    text-align: center;
+    width: 100%;
+}
+
+.front_lab_text{
+    height: 100%;
+    letter-spacing: 2px;
+    font-size: 4em;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 2%;
+}
+
+.epam_front_lab_text{
+    /* display: 2 row; */
+    font-size: 1em;
+    font-weight: bold;
+    color: #bfba55;
+    margin-top: 2%;
+}
+
+.btn {
+    text-transform: uppercase;
+    font-size: 11px;
+    font-family: inherit;
+    padding: 15px 25px;
+    border-radius: 25px;
+    outline: none;
+    background-color: #fff;
+    font-weight: bold;
+    color: #777;
+    letter-spacing: 2px;
+    margin-top: 4%;
+    transition: color 0.5s, background-color 0.5s;
+}
+
+.btn-landing{
+    border: none;
+}
+
+.btn:hover {
+    color: #fff;
+    background-color: #a09a9a;
+    transition: color 0.5s, background-color 0.5s;
+}
+
+.btn:active {
+    color: #fff;
+    background-color: #6d6a6a;
+    transition: background-color 0.1s;
+}
+
+.post-wrapper{
+    margin: 70px 0;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.post-picture{
+    width: 100%; 
+    height: 100%; 
+    object-fit: contain; 
+}
+
+.post-properties{
+    height: 50px;
+    line-height: 50px;
+    vertical-align: middle;
+    margin: 10px 0;
+}
+
+.post-properties .author-img{
+    width: auto;
+    max-height: 50px;
+    float: left;
+    border-radius: 50%;
+}
+
+.post-title{
+    margin-top: 30px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.post-properties > .author-name, .date, .comments{
+    display: inline-block;
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: 200;
+    font-family: serif;
+    font-size: 1.25rem;
+    padding: 0% 1%;
+}
+
+.post-short-text{
+    margin-top: 20px; 
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 200;
+    font-family: serif;
+    font-size: 1.25rem;
+}
+
+.btn-post{
+    border: solid;
+    border-width: 1px;
+    border-color: #6d6a6a;
+    outline: none;
+}
+
+hr{
+    margin: 50px 0;
+    border-color: rgba(0, 0, 0, 0.1);;
+}
+
+footer{
+    padding: 40px 0;
+    color: #fff;
+    background-color: #000;
+}
+
+.footer-wrapper{
+    display: block;
+    width: 100%;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 30px;
+}
+
+.footer-item{
+    width:30%; 
+    display: inline-block;
+    vertical-align: top;
+}
+
+footer h3{
+    font-size: 1.4rem;
+}
+
+.about{
+    margin-right: 5%;
+}
+
+.contacts{
+    margin-left: 5%;
+}
+
+footer p{
+    color: rgba(255, 255, 255, 0.6)
+}
