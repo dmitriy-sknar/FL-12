@@ -1,0 +1,43 @@
+div {
+    padding: 2px 0;
+}
+
+ul {
+    list-style: none;
+    padding-left: 15px;
+}
+
+li {
+    font-size: 16px;
+}
+
+li>div:hover {
+    background-color: #ecebeb;
+    cursor: pointer;
+}
+
+.folder .material-icons,
+.folder-open .material-icons {
+    color: #ecba03;
+}
+
+.insert_drive_file .material-icons {
+    color: #b5b5c2
+}
+
+.hide {
+    display: none;
+}
+
+li.folder-is-empty>div:hover {
+    background-color: unset;
+}
+
+.folder-is-empty {
+    margin-left: -10px;
+}
+
+.material-icons {
+    vertical-align: bottom;
+    font-size: 1.1em;
+}
